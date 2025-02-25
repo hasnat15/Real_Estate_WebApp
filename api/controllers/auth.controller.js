@@ -1,5 +1,6 @@
 const  User  = require("../models/user.model")
 const bcrypt = require ("bcrypt")
+const handleError = require("../utils/error")
 
 module.exports={
     signup:async (req,res, next)=>{
@@ -14,7 +15,7 @@ module.exports={
             
         } catch (error) {
             
-            next(error)
+            next(handleError(550, 'error from the internal function'))
             
         }
        
