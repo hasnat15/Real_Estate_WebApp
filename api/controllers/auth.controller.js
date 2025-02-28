@@ -34,7 +34,9 @@ module.exports={
             if(!validPassword) return next(errorHanlder(401, 'Wrong Credentials'))
             
             const token= jwt.sign({id: validUser._id}, process.env.JWT_SECRET)
-            res.cookie('access_token', token, {httpOnly: true}).status(200).json(validUser)
+            const {password: pass, ...rest}= validUser._doc
+            res.cookie('access_token', token, {httpOnly: true}).status(200).json(rest)
+           
             
         } catch (error) {
             next(error)
