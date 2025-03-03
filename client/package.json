@@ -12,6 +12,7 @@
   "dependencies": {
     "@reduxjs/toolkit": "^2.6.0",
     "client": "file:",
+    "firebase": "^11.4.0",
     "mongoose": "^8.10.1",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
