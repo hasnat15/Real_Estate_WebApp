@@ -12,6 +12,7 @@
   "dependencies": {
     "@reduxjs/toolkit": "^2.6.0",
     "client": "file:",
+    "cookie-parser": "^1.4.7",
     "firebase": "^11.4.0",
     "mongoose": "^8.10.1",
     "react": "^19.0.0",
