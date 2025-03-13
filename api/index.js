@@ -3,6 +3,7 @@ const mongoose= require('mongoose')
 const dotenv = require('dotenv')
 const userRouter= require('./routes/user.route.js')
 const authRouter = require('./routes/auth.route.js')
+const listingRouter= require('./routes/listing.route.js')
 const cookieParser = require('cookie-parser')
 
 
@@ -22,6 +23,7 @@ app.use(cookieParser())
 
 app.use('/api/user', userRouter)
 app.use("/api/auth", authRouter)
+app.use('/api/listing',listingRouter)
 
 // now we are making a middleware for auth error handling
 app.use((err, req, res, next)=>{
