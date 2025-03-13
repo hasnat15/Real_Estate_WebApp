@@ -14,6 +14,8 @@ import {
   signoutUserSuccess,
   signoutUserStart
 } from '../redux/user/userSlice'
+import {Link} from 'react-router-dom'
+import CreateListing from './CreateListing'
 
 
 
@@ -154,6 +156,7 @@ const Profile = () => {
           <input onChange={handleChange} type='email' defaultValue={currentUser.email} placeholder='email' className='border p-3 rounded-lg' id='email'/>
           <input onChange={handleChange} type='password' placeholder='password' className='border p-3 rounded-lg' id='password'/>
           <button disabled={loading} className='bg-slate-700 text-white uppercase p-3 rounded-lg hover:opacity:95 disabled:opacity-80 '>{loading? 'loading...': "update"}</button>
+          <Link className='bg-green-700 text-white p-3 rounded-lg uppercase text-center hover:opacity-95' to={"/create-listing"}>create listing</Link>
       </form>
       <div className='flex justify-between mt-5'>
         <span onClick={handleDeleteUser} className='text-red-700 cursor-pointer'>Delete Account</span>
