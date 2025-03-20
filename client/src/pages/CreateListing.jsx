@@ -1,6 +1,9 @@
+import { useState } from "react"
 
 
 export default function CreateListing() {
+    const [files, setFiles]= useState([])
+    console.log(files)
   return (
     <main className="p-3 max-w-4xl mx-auto">
         <h1 className="text-3xl font-semibold text-center my-7"> Create a listing</h1>
@@ -64,7 +67,9 @@ export default function CreateListing() {
                 <span className="text-gray-600 ml-2">The first image will be the cover (max-2)</span>
                 </p>
                 <div className="flex gap-4">
-                    <input className="p-3 border border-gray-300 rounded-lg w-full" type="file" id="images" accept="image/*" multiple />
+                    <input 
+                    onChange={(e)=>setFiles(e.target.files)}
+                    className="p-3 border border-gray-300 rounded-lg w-full" type="file" id="images" accept="image/*" multiple />
                     <button className="p-3 text-green-700 border border-green-700 rounded uppercase hover:shadow-lg disabled:opcatity-80">Upload</button>
                 </div>
                 <button className="p-3 bg-slate-700 text-white rounded-lg uppercase hover:opacity-95 disabled:opacity-80">Create Listing</button>
